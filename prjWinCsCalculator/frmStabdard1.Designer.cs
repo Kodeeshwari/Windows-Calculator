@@ -29,6 +29,17 @@
         private void InitializeComponent()
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.lblExp = new System.Windows.Forms.Label();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnMC = new System.Windows.Forms.Button();
+            this.btnMR = new System.Windows.Forms.Button();
+            this.btnMadd = new System.Windows.Forms.Button();
+            this.btnMminus = new System.Windows.Forms.Button();
+            this.btnM = new System.Windows.Forms.Button();
+            this.btnMS = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnPer = new System.Windows.Forms.Button();
             this.btnCE = new System.Windows.Forms.Button();
@@ -54,27 +65,16 @@
             this.btnThree = new System.Windows.Forms.Button();
             this.btnFive = new System.Windows.Forms.Button();
             this.btnSix = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.lblResult = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnM = new System.Windows.Forms.Button();
-            this.btnMS = new System.Windows.Forms.Button();
-            this.btnMminus = new System.Windows.Forms.Button();
-            this.btnMadd = new System.Windows.Forms.Button();
-            this.btnMR = new System.Windows.Forms.Button();
-            this.btnMC = new System.Windows.Forms.Button();
-            this.lblExp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -95,6 +95,177 @@
             this.splitContainer1.Size = new System.Drawing.Size(427, 469);
             this.splitContainer1.SplitterDistance = 157;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Location = new System.Drawing.Point(3, 39);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.lblExp);
+            this.splitContainer2.Panel1.Controls.Add(this.lblResult);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
+            this.splitContainer2.Size = new System.Drawing.Size(420, 115);
+            this.splitContainer2.SplitterDistance = 70;
+            this.splitContainer2.TabIndex = 2;
+            // 
+            // lblExp
+            // 
+            this.lblExp.AutoSize = true;
+            this.lblExp.Location = new System.Drawing.Point(375, 0);
+            this.lblExp.Name = "lblExp";
+            this.lblExp.Size = new System.Drawing.Size(35, 13);
+            this.lblExp.TabIndex = 3;
+            this.lblExp.Text = "label3";
+            this.lblExp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblResult
+            // 
+            this.lblResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.lblResult.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblResult.Location = new System.Drawing.Point(0, 0);
+            this.lblResult.Name = "lblResult";
+            this.lblResult.Size = new System.Drawing.Size(420, 70);
+            this.lblResult.TabIndex = 2;
+            this.lblResult.Text = "0";
+            this.lblResult.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 6;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel2.Controls.Add(this.btnMC, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnMR, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnMadd, 2, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnMminus, 3, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnM, 5, 0);
+            this.tableLayoutPanel2.Controls.Add(this.btnMS, 4, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, -1);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(420, 42);
+            this.tableLayoutPanel2.TabIndex = 0;
+            // 
+            // btnMC
+            // 
+            this.btnMC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMC.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnMC.Location = new System.Drawing.Point(0, 0);
+            this.btnMC.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMC.Name = "btnMC";
+            this.btnMC.Size = new System.Drawing.Size(60, 40);
+            this.btnMC.TabIndex = 8;
+            this.btnMC.Text = "MC";
+            this.btnMC.UseVisualStyleBackColor = false;
+            this.btnMC.Click += new System.EventHandler(this.btnMC_Click);
+            // 
+            // btnMR
+            // 
+            this.btnMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMR.FlatAppearance.BorderSize = 0;
+            this.btnMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMR.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
+            this.btnMR.Location = new System.Drawing.Point(70, 0);
+            this.btnMR.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMR.Name = "btnMR";
+            this.btnMR.Size = new System.Drawing.Size(60, 40);
+            this.btnMR.TabIndex = 9;
+            this.btnMR.Text = "MR";
+            this.btnMR.UseVisualStyleBackColor = false;
+            this.btnMR.Click += new System.EventHandler(this.btnMR_Click);
+            // 
+            // btnMadd
+            // 
+            this.btnMadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMadd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMadd.FlatAppearance.BorderSize = 0;
+            this.btnMadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMadd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMadd.ForeColor = System.Drawing.Color.Black;
+            this.btnMadd.Location = new System.Drawing.Point(140, 0);
+            this.btnMadd.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMadd.Name = "btnMadd";
+            this.btnMadd.Size = new System.Drawing.Size(60, 40);
+            this.btnMadd.TabIndex = 10;
+            this.btnMadd.Text = "M+";
+            this.btnMadd.UseVisualStyleBackColor = false;
+            this.btnMadd.Click += new System.EventHandler(this.btnMadd_Click);
+            // 
+            // btnMminus
+            // 
+            this.btnMminus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMminus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMminus.FlatAppearance.BorderSize = 0;
+            this.btnMminus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMminus.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMminus.ForeColor = System.Drawing.Color.Black;
+            this.btnMminus.Location = new System.Drawing.Point(210, 0);
+            this.btnMminus.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMminus.Name = "btnMminus";
+            this.btnMminus.Size = new System.Drawing.Size(60, 40);
+            this.btnMminus.TabIndex = 11;
+            this.btnMminus.Text = "M-";
+            this.btnMminus.UseVisualStyleBackColor = false;
+            this.btnMminus.Click += new System.EventHandler(this.btnMminus_Click);
+            // 
+            // btnM
+            // 
+            this.btnM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnM.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnM.FlatAppearance.BorderSize = 0;
+            this.btnM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnM.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnM.Location = new System.Drawing.Point(350, 0);
+            this.btnM.Margin = new System.Windows.Forms.Padding(0);
+            this.btnM.Name = "btnM";
+            this.btnM.Size = new System.Drawing.Size(60, 40);
+            this.btnM.TabIndex = 13;
+            this.btnM.Text = "M";
+            this.btnM.UseVisualStyleBackColor = false;
+            // 
+            // btnMS
+            // 
+            this.btnMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
+            this.btnMS.FlatAppearance.BorderSize = 0;
+            this.btnMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMS.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMS.ForeColor = System.Drawing.Color.Black;
+            this.btnMS.Location = new System.Drawing.Point(280, 0);
+            this.btnMS.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMS.Name = "btnMS";
+            this.btnMS.Size = new System.Drawing.Size(60, 40);
+            this.btnMS.TabIndex = 12;
+            this.btnMS.Text = "MS";
+            this.btnMS.UseVisualStyleBackColor = false;
+            this.btnMS.Click += new System.EventHandler(this.btnMS_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Standard";
             // 
             // tableLayoutPanel1
             // 
@@ -173,6 +344,7 @@
             this.btnCE.Text = "CE";
             this.btnCE.UseMnemonic = false;
             this.btnCE.UseVisualStyleBackColor = false;
+            this.btnCE.Click += new System.EventHandler(this.btnCE_Click);
             // 
             // btnErase
             // 
@@ -253,6 +425,7 @@
             this.btnDot.Text = ".";
             this.btnDot.UseMnemonic = false;
             this.btnDot.UseVisualStyleBackColor = false;
+            this.btnDot.Click += new System.EventHandler(this.btnDot_Click);
             // 
             // btnSquare
             // 
@@ -534,177 +707,6 @@
             this.btnSix.UseVisualStyleBackColor = false;
             this.btnSix.Click += new System.EventHandler(this.btnSix_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 30);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Standard";
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Location = new System.Drawing.Point(3, 39);
-            this.splitContainer2.Name = "splitContainer2";
-            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.lblExp);
-            this.splitContainer2.Panel1.Controls.Add(this.lblResult);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.tableLayoutPanel2);
-            this.splitContainer2.Size = new System.Drawing.Size(420, 115);
-            this.splitContainer2.SplitterDistance = 70;
-            this.splitContainer2.TabIndex = 2;
-            // 
-            // lblResult
-            // 
-            this.lblResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.lblResult.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResult.Location = new System.Drawing.Point(0, 0);
-            this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(420, 70);
-            this.lblResult.TabIndex = 2;
-            this.lblResult.Text = "0";
-            this.lblResult.TextAlign = System.Drawing.ContentAlignment.BottomRight;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 6;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel2.Controls.Add(this.btnMC, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnMR, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnMadd, 2, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnMminus, 3, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnM, 5, 0);
-            this.tableLayoutPanel2.Controls.Add(this.btnMS, 4, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, -1);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(420, 42);
-            this.tableLayoutPanel2.TabIndex = 0;
-            // 
-            // btnM
-            // 
-            this.btnM.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnM.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnM.FlatAppearance.BorderSize = 0;
-            this.btnM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnM.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnM.Location = new System.Drawing.Point(350, 0);
-            this.btnM.Margin = new System.Windows.Forms.Padding(0);
-            this.btnM.Name = "btnM";
-            this.btnM.Size = new System.Drawing.Size(60, 40);
-            this.btnM.TabIndex = 13;
-            this.btnM.Text = "M";
-            this.btnM.UseVisualStyleBackColor = false;
-            // 
-            // btnMS
-            // 
-            this.btnMS.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMS.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMS.FlatAppearance.BorderSize = 0;
-            this.btnMS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMS.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMS.ForeColor = System.Drawing.Color.Black;
-            this.btnMS.Location = new System.Drawing.Point(280, 0);
-            this.btnMS.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMS.Name = "btnMS";
-            this.btnMS.Size = new System.Drawing.Size(60, 40);
-            this.btnMS.TabIndex = 12;
-            this.btnMS.Text = "MS";
-            this.btnMS.UseVisualStyleBackColor = false;
-            this.btnMS.Click += new System.EventHandler(this.btnMS_Click);
-            // 
-            // btnMminus
-            // 
-            this.btnMminus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMminus.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMminus.FlatAppearance.BorderSize = 0;
-            this.btnMminus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMminus.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMminus.ForeColor = System.Drawing.Color.Black;
-            this.btnMminus.Location = new System.Drawing.Point(210, 0);
-            this.btnMminus.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMminus.Name = "btnMminus";
-            this.btnMminus.Size = new System.Drawing.Size(60, 40);
-            this.btnMminus.TabIndex = 11;
-            this.btnMminus.Text = "M-";
-            this.btnMminus.UseVisualStyleBackColor = false;
-            this.btnMminus.Click += new System.EventHandler(this.btnMminus_Click);
-            // 
-            // btnMadd
-            // 
-            this.btnMadd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMadd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMadd.FlatAppearance.BorderSize = 0;
-            this.btnMadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMadd.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMadd.ForeColor = System.Drawing.Color.Black;
-            this.btnMadd.Location = new System.Drawing.Point(140, 0);
-            this.btnMadd.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMadd.Name = "btnMadd";
-            this.btnMadd.Size = new System.Drawing.Size(60, 40);
-            this.btnMadd.TabIndex = 10;
-            this.btnMadd.Text = "M+";
-            this.btnMadd.UseVisualStyleBackColor = false;
-            this.btnMadd.Click += new System.EventHandler(this.btnMadd_Click);
-            // 
-            // btnMR
-            // 
-            this.btnMR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMR.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMR.FlatAppearance.BorderSize = 0;
-            this.btnMR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMR.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMR.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
-            this.btnMR.Location = new System.Drawing.Point(70, 0);
-            this.btnMR.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMR.Name = "btnMR";
-            this.btnMR.Size = new System.Drawing.Size(60, 40);
-            this.btnMR.TabIndex = 9;
-            this.btnMR.Text = "MR";
-            this.btnMR.UseVisualStyleBackColor = false;
-            this.btnMR.Click += new System.EventHandler(this.btnMR_Click);
-            // 
-            // btnMC
-            // 
-            this.btnMC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.btnMC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMC.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(163)))), ((int)(((byte)(163)))));
-            this.btnMC.Location = new System.Drawing.Point(0, 0);
-            this.btnMC.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMC.Name = "btnMC";
-            this.btnMC.Size = new System.Drawing.Size(60, 40);
-            this.btnMC.TabIndex = 8;
-            this.btnMC.Text = "MC";
-            this.btnMC.UseVisualStyleBackColor = false;
-            this.btnMC.Click += new System.EventHandler(this.btnMC_Click);
-            // 
-            // lblExp
-            // 
-            this.lblExp.AutoSize = true;
-            this.lblExp.Location = new System.Drawing.Point(375, 0);
-            this.lblExp.Name = "lblExp";
-            this.lblExp.Size = new System.Drawing.Size(35, 13);
-            this.lblExp.TabIndex = 3;
-            this.lblExp.Text = "label3";
-            this.lblExp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // frmStabdard1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -722,13 +724,13 @@
             this.splitContainer1.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
