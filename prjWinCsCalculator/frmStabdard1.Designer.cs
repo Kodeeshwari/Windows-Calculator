@@ -122,7 +122,7 @@
             this.lblExp.Size = new System.Drawing.Size(35, 13);
             this.lblExp.TabIndex = 3;
             this.lblExp.Text = "label3";
-            this.lblExp.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblExp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblResult
             // 
@@ -360,6 +360,7 @@
             this.btnErase.Text = "Erase";
             this.btnErase.UseMnemonic = false;
             this.btnErase.UseVisualStyleBackColor = false;
+            this.btnErase.Click += new System.EventHandler(this.btnErase_Click);
             // 
             // btnC
             // 
@@ -409,6 +410,7 @@
             this.btnReciprocal.Text = "1/x";
             this.btnReciprocal.UseMnemonic = false;
             this.btnReciprocal.UseVisualStyleBackColor = false;
+            this.btnReciprocal.Click += new System.EventHandler(this.btnReciprocal_Click);
             // 
             // btnDot
             // 
@@ -442,6 +444,7 @@
             this.btnSquare.Text = "x2";
             this.btnSquare.UseMnemonic = false;
             this.btnSquare.UseVisualStyleBackColor = false;
+            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
             // 
             // btnZero
             // 
@@ -475,6 +478,7 @@
             this.btnSroot.Text = "rootx";
             this.btnSroot.UseMnemonic = false;
             this.btnSroot.UseVisualStyleBackColor = false;
+            this.btnSroot.Click += new System.EventHandler(this.btnSroot_Click);
             // 
             // btnneg
             // 
@@ -491,6 +495,7 @@
             this.btnneg.Text = "+/-";
             this.btnneg.UseMnemonic = false;
             this.btnneg.UseVisualStyleBackColor = false;
+            this.btnneg.Click += new System.EventHandler(this.btnneg_Click);
             // 
             // btnDivide
             // 
@@ -503,9 +508,10 @@
             this.btnDivide.Name = "btnDivide";
             this.btnDivide.Size = new System.Drawing.Size(105, 50);
             this.btnDivide.TabIndex = 35;
-            this.btnDivide.Text = "divide";
+            this.btnDivide.Text = "/";
             this.btnDivide.UseMnemonic = false;
             this.btnDivide.UseVisualStyleBackColor = false;
+            this.btnDivide.Click += new System.EventHandler(this.btnDivide_Click);
             // 
             // btnSeven
             // 
@@ -604,6 +610,7 @@
             this.btnMul.Text = "X";
             this.btnMul.UseMnemonic = false;
             this.btnMul.UseVisualStyleBackColor = false;
+            this.btnMul.Click += new System.EventHandler(this.btnMul_Click);
             // 
             // btnnine
             // 

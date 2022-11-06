@@ -19,10 +19,8 @@ namespace prjWinCsCalculator
             InitializeComponent();
         }
 
-        Boolean lblFlag = false;
-        Single num,total=0;
-        Boolean equalFlag = false;
-        String opr;
+        String opr, inputOne,inputTwo,temp;
+        Double operandOne,operandTwo,total;
 
         private void frmStabdard1_Load(object sender, EventArgs e)
         {
@@ -70,256 +68,303 @@ namespace prjWinCsCalculator
             lblExp.Text="";
             lblExp.Visible = false;
             lblResult.Text = "0";
+            inputOne = inputTwo =null;
         }
 
         private void btnOne_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
+            displayBtnText(btnOne.Text); 
+        }
+
+        private void displayBtnText(string btntext)
+        {
+            if (!btnPlus.Enabled || !btnMinus.Enabled || !btnMul.Enabled || !btnDivide.Enabled)
             {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnOne.Text : lblResult.Text + btnOne.Text;
-                
+                lblResult.Text = btntext;
             }
             else
             {
-                lblFlag = false;
-                lblResult.Text = btnOne.Text;
+                lblResult.Text = lblResult.Text == "0" && lblResult.Text != null ? btntext : lblResult.Text + btntext ;
             }
+            btnPlus.Enabled = btnMinus.Enabled = btnMul.Enabled = btnDivide.Enabled = true;
         }
 
         private void btnTwo_Click(object sender, EventArgs e)
         {
-
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnTwo.Text : lblResult.Text + btnTwo.Text;
-                
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnTwo.Text;
-            }
+            displayBtnText(btnTwo.Text);
         }
 
         private void btnThree_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnThree.Text : lblResult.Text + btnThree.Text;
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnThree.Text;
-            }
+            displayBtnText(btnThree.Text);
+
         }
 
         private void btnFour_Click(object sender, EventArgs e)
         {
-            if(!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnFour.Text : lblResult.Text + btnFour.Text;
-
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnFour.Text;
-            }
-
+            displayBtnText(btnFour.Text);
         }
 
         private void btnFive_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnFive.Text : lblResult.Text + btnFive.Text;
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnFive.Text;
-            }
+            displayBtnText(btnFive.Text);
+
         }
 
         private void btnSix_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnSix.Text : lblResult.Text + btnSix.Text;
+            displayBtnText(btnSix.Text);
 
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnSix.Text;
-            }
         }
 
         private void btnSeven_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnSeven.Text : lblResult.Text + btnSeven.Text;
+            displayBtnText(btnSeven.Text);
 
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnSeven.Text;
-            }
         }
 
         private void btneight_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btneight.Text : lblResult.Text + btneight.Text;
+            displayBtnText(btneight.Text);
 
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btneight.Text;
-            }
         }
 
         private void btnnine_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnnine.Text : lblResult.Text + btnnine.Text;
+            displayBtnText(btnnine.Text);
 
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnnine.Text;
-            }
         }
 
         private void btnZero_Click(object sender, EventArgs e)
         {
-            if (!lblFlag)
-            {
-                lblResult.Text = lblResult.Text == "0" && lblExp.Text != null ? btnZero.Text : lblResult.Text + btnZero.Text;
+            displayBtnText(btnZero.Text);
 
-            }
-            else
-            {
-                lblFlag = false;
-                lblResult.Text = btnZero.Text;
-            }
         }
 
         private void btnPlus_Click(object sender, EventArgs e)
         {
             opr = btnPlus.Text;
-            lblExp.Visible = true;
-            
-            if (!lblFlag)
+            displayExpression(btnPlus.Text);
+            btnPlus.Enabled = false;
+            if(!btnMinus.Enabled || !btnMul.Enabled || !btnDivide.Enabled)
             {
-                lblExp.Text += lblResult.Text + " " + opr;
-                num = Convert.ToSingle(lblResult.Text);
-                total += num;
-                lblExp.Text = total + opr;
-                lblResult.Text = total.ToString();
-                lblFlag = true;  
+                btnMinus.Enabled = btnMul.Enabled = btnDivide.Enabled = true;
             }
-            else
-            {
-                lblExp.Text = lblResult.Text + " " + opr;
-                
-            }
+            checkInputs(opr);     
         }
-        Int16 count = 0;
-        private void btnMinus_Click(object sender, EventArgs e)
+
+        private void displayExpression(String exp)
+        {
+            lblExp.Visible = true;
+            lblExp.Text += lblResult.Text + exp;
+        }
+
+        private void checkInputs(String opr)
         {
             
-            opr = btnMinus.Text;
+            if (inputOne == null)
+            {
+                inputOne = lblResult.Text;
+                operandOne = Convert.ToDouble(inputOne);
+                temp = opr;
+            }
+            else if(inputTwo==null)
+            {
+                inputTwo = lblResult.Text;
+                operandTwo = Convert.ToDouble(inputTwo);           
+            }
+
+            if (inputOne != null && inputTwo != null)
+            {
+                performCalculation();
+            }
+        }
+
+        private void btnMul_Click(object sender, EventArgs e)
+        {
+            opr = btnMul.Text;
+            displayExpression(btnMul.Text);
+            btnMul.Enabled = false;
+            if (!btnMinus.Enabled || !btnPlus.Enabled || !btnDivide.Enabled)
+            {
+                btnMinus.Enabled = btnPlus.Enabled = btnDivide.Enabled = true;
+            }
+            checkInputs(opr);
+        }
+
+        private void btnDivide_Click(object sender, EventArgs e)
+        {
+            opr = btnDivide.Text;
+            displayExpression(btnDivide.Text);
+            btnDivide.Enabled = false;
+            if (!btnMinus.Enabled || !btnPlus.Enabled || !btnMul.Enabled)
+            {
+                btnMinus.Enabled = btnPlus.Enabled = btnMul.Enabled = true;
+            }
+            checkInputs(opr);
+
+        }
+
+        private void btnSquare_Click(object sender, EventArgs e)
+        {
+                lblExp.Visible = true;
+                inputOne = lblResult.Text;
+                operandOne = Convert.ToDouble(inputOne);
+                lblExp.Text += "Sqr(" + operandOne + ")";
+                lblResult.Text = (operandOne * operandOne).ToString(); 
+        }
+
+        private void btnSroot_Click(object sender, EventArgs e)
+        {
             lblExp.Visible = true;
-            MessageBox.Show(lblFlag.ToString());
-            if (!lblFlag)
+            inputOne = lblResult.Text;
+            operandOne = Convert.ToDouble(inputOne);
+            lblExp.Text = "√(" + operandOne + ")";
+            lblResult.Text = (operandOne * 0.5).ToString();
+
+        }
+
+        Double num;
+        private void btnneg_Click(object sender, EventArgs e)
+        {
+            lblExp.Visible = true;
+            num =Convert.ToDouble(lblResult.Text);
+            num = num * (-1);
+            lblResult.Text = num.ToString();
+        }
+
+        private void btnReciprocal_Click(object sender, EventArgs e)
+        {
+            lblExp.Visible = true;
+            inputOne = lblResult.Text;
+            operandOne = Convert.ToDouble(inputOne);
+            lblExp.Text = "1/" + operandOne;
+            lblResult.Text = (1/operandOne).ToString();
+        }
+        Int16 strlen;
+        private void btnErase_Click(object sender, EventArgs e)
+        {
+            inputOne = lblResult.Text;
+            lblResult.Text = inputOne.Remove(inputOne.Length - 1, 1);
+        }
+
+        private void performCalculation()
+        {
+            switch (temp)
             {
-                lblExp.Text += lblResult.Text + " " + opr;
-                MessageBox.Show(lblExp.Text);
-                num = Convert.ToSingle(lblResult.Text);
-                
-                total = total - num;
-                Decimal minus = Convert.ToDecimal(total);
-
-                if (count < 1)
-                {
-                    minus = Decimal.Negate(minus);
-                    total = Convert.ToSingle(minus);
-                    count++;
-                }
-
-                lblExp.Text = total + opr;
-
-                lblResult.Text = total.ToString();
-                lblFlag = true;
+                case "+":
+                    operandOne = operandOne + operandTwo;
+                    lblExp.Text = operandOne.ToString() + opr;
+                    lblResult.Text = operandOne.ToString();
+                    temp = opr;
+                    inputTwo = null;
+                    break;
+                case "-":
+                    if (Math.Sign(operandOne) == -1)
+                    {
+                        operandOne = (operandOne*-1) + operandTwo;
+                        operandOne = -operandOne;
+                    }
+                    else
+                    {
+                        operandOne = operandOne - operandTwo;
+                    }
+                    lblExp.Text = operandOne.ToString() + opr;
+                    lblResult.Text = operandOne.ToString();
+                   temp = opr;
+                    inputTwo = null; 
+                    break;
+                case "X":
+                    operandOne = operandOne * operandTwo;
+                    lblExp.Text = operandOne.ToString() + opr;
+                    lblResult.Text = operandOne.ToString();
+                    temp = opr;
+                    inputTwo = null;
+                    break;
+                case "/":
+                    operandOne = operandOne / operandTwo;
+                    lblExp.Text = operandOne.ToString() + opr;
+                    lblResult.Text = operandOne.ToString();
+                    temp = opr;
+                    inputTwo = null;
+                    break;
+                default:
+                    MessageBox.Show("opr not valid");
+                    break;
             }
-            else
+        }
+
+        private void btnMinus_Click(object sender, EventArgs e)
+        {
+            opr = btnMinus.Text;
+            displayExpression(btnMinus.Text);
+            btnMinus.Enabled = false;
+            if (!btnPlus.Enabled || !btnMul.Enabled || !btnDivide.Enabled)
             {
-                lblExp.Text = lblResult.Text + " " + opr;
+                btnPlus.Enabled = btnMul.Enabled = btnDivide.Enabled = true;
             }
-              
+            checkInputs(opr);
         }
 
         private void btnDot_Click(object sender, EventArgs e)
         {
-
+            displayBtnText(btnDot.Text);
         }
-
+        Boolean flagV = false;
         private void btnEqual_Click(object sender, EventArgs e)
         {
             
-            if (!equalFlag)
+            opr = btnEqual.Text;
+            //displayExpression(btnEqual.Text);
+            if (inputOne == null)
             {
-                
-                num = Convert.ToSingle(lblResult.Text);
-                
-                switch (opr)
-                {
-                    case "+":
-                        lblExp.Text += lblResult.Text + " " + btnEqual.Text;
-                        total += num;
-                        lblResult.Text = total.ToString();
-                        equalFlag = true;
-                        lblFlag = true;
-                        break;
-                    case "-":
-                        lblExp.Text += lblResult.Text + " " + btnEqual.Text;
-                        total -= num;
-                        lblResult.Text = total.ToString();
-                        equalFlag = true;
-                        break;
-                    default: MessageBox.Show("error");
-                        break;
-                }
+                inputOne = lblResult.Text;
+                operandOne = Convert.ToDouble(inputOne);
+                temp = opr;
             }
-            else{
-                switch (opr)
-                {
-                    case "+":
-                        lblExp.Text = total +" "+ opr+" " + num;
-                        total += num;
-                        lblResult.Text = total.ToString();
-                        lblFlag = true;
-                        break;
-                    case "-":
-                        lblExp.Text = total + " " + opr + " " + num;
-                        total -= num;
-                        lblResult.Text = total.ToString();
-                        equalFlag = true;
-                        break;
-                    default:
-                        MessageBox.Show("error");
-                        break;
-                }
+            else if (inputTwo == null)
+            {
+                inputTwo = lblResult.Text;
+                operandTwo = Convert.ToDouble(inputTwo);
             }
-            
+
+            switch (temp)
+            {
+                case "+":
+                    if (!flagV)
+                    {
+                        lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + opr;
+                        operandOne = operandOne + operandTwo;
+                        flagV = false;
+                    }
+                    else
+                    {
+                        operandOne = Convert.ToDouble(lblResult.Text);
+                        lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + opr;
+                        operandOne = operandOne + operandTwo;
+                    }
+                   
+                    lblResult.Text = operandOne.ToString();
+                    temp = opr;
+                    break;
+                case "-":
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + opr;
+
+                    if (Math.Sign(operandOne) == -1)
+                    {
+                        operandOne = (operandOne * -1) + operandTwo;
+                        operandOne = -operandOne;
+                    }
+                    else
+                    {
+                        operandOne = operandOne - operandTwo;
+                    }
+                    
+                    lblResult.Text = operandOne.ToString();
+                    temp = opr;
+                    inputTwo = null;
+                    break;
+            }
         }
     }
 }
