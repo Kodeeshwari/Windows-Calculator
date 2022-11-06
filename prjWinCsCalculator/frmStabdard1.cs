@@ -210,7 +210,7 @@ namespace prjWinCsCalculator
                 lblExp.Visible = true;
                 inputOne = lblResult.Text;
                 operandOne = Convert.ToDouble(inputOne);
-                lblExp.Text += "Sqr(" + operandOne + ")";
+                lblExp.Text = "Sqr(" + operandOne + ")";
                 lblResult.Text = (operandOne * operandOne).ToString(); 
         }
 
@@ -310,6 +310,7 @@ namespace prjWinCsCalculator
         {
             displayBtnText(btnDot.Text);
         }
+
         Boolean flagV = false;
         private void btnEqual_Click(object sender, EventArgs e)
         {
