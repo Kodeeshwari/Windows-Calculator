@@ -59,5 +59,14 @@ namespace prjWinCsCalculator
             toolCboOption.Items.Add("Configuration Manager");
             toolCboOption.SelectedIndex = 0;  
         }
+
+        private void versionStandardToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmStabdard1 fstc = new frmStabdard1();
+            fstc.Show();
+            // to center the formchild inside the MDI
+            fstc.Left = (this.Width - fstc.Width) / 2;
+            fstc.Top = (this.Height - fstc.Height) / 2;
+        }
     }
 }

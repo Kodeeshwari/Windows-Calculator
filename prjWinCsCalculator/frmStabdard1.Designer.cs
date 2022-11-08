@@ -92,8 +92,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(427, 469);
-            this.splitContainer1.SplitterDistance = 157;
+            this.splitContainer1.Size = new System.Drawing.Size(427, 464);
+            this.splitContainer1.SplitterDistance = 154;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -350,7 +350,7 @@
             // 
             this.btnErase.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.btnErase.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btnErase.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnErase.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnErase.ForeColor = System.Drawing.Color.Black;
             this.btnErase.Location = new System.Drawing.Point(315, 0);
             this.btnErase.Margin = new System.Windows.Forms.Padding(0);
@@ -381,10 +381,10 @@
             // 
             // btnEqual
             // 
-            this.btnEqual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.btnEqual.BackColor = System.Drawing.Color.Maroon;
             this.btnEqual.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
             this.btnEqual.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEqual.ForeColor = System.Drawing.Color.Black;
+            this.btnEqual.ForeColor = System.Drawing.Color.White;
             this.btnEqual.Location = new System.Drawing.Point(315, 250);
             this.btnEqual.Margin = new System.Windows.Forms.Padding(0);
             this.btnEqual.Name = "btnEqual";
@@ -399,6 +399,7 @@
             // 
             this.btnReciprocal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.btnReciprocal.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnReciprocal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReciprocal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReciprocal.ForeColor = System.Drawing.Color.Black;
             this.btnReciprocal.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
@@ -433,7 +434,7 @@
             // 
             this.btnSquare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.btnSquare.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btnSquare.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSquare.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSquare.ForeColor = System.Drawing.Color.Black;
             this.btnSquare.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSquare.Location = new System.Drawing.Point(105, 50);
@@ -467,7 +468,7 @@
             // 
             this.btnSroot.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.btnSroot.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btnSroot.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSroot.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSroot.ForeColor = System.Drawing.Color.Black;
             this.btnSroot.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnSroot.Location = new System.Drawing.Point(210, 50);
@@ -475,7 +476,7 @@
             this.btnSroot.Name = "btnSroot";
             this.btnSroot.Size = new System.Drawing.Size(105, 50);
             this.btnSroot.TabIndex = 34;
-            this.btnSroot.Text = "rootx";
+            this.btnSroot.Text = " rootx";
             this.btnSroot.UseMnemonic = false;
             this.btnSroot.UseVisualStyleBackColor = false;
             this.btnSroot.Click += new System.EventHandler(this.btnSroot_Click);
@@ -501,7 +502,7 @@
             // 
             this.btnDivide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.btnDivide.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btnDivide.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDivide.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDivide.ForeColor = System.Drawing.Color.Black;
             this.btnDivide.Location = new System.Drawing.Point(315, 50);
             this.btnDivide.Margin = new System.Windows.Forms.Padding(0);
@@ -534,7 +535,7 @@
             // 
             this.btnPlus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.btnPlus.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btnPlus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPlus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlus.ForeColor = System.Drawing.Color.Black;
             this.btnPlus.Location = new System.Drawing.Point(315, 200);
             this.btnPlus.Margin = new System.Windows.Forms.Padding(0);
@@ -567,7 +568,7 @@
             // 
             this.btnMinus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
             this.btnMinus.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.btnMinus.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinus.ForeColor = System.Drawing.Color.Black;
             this.btnMinus.Location = new System.Drawing.Point(315, 150);
             this.btnMinus.Margin = new System.Windows.Forms.Padding(0);
@@ -720,7 +721,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(427, 469);
+            this.ClientSize = new System.Drawing.Size(427, 464);
             this.Controls.Add(this.splitContainer1);
             this.Name = "frmStabdard1";
             this.Text = "frmtable";

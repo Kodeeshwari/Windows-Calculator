@@ -24,11 +24,16 @@ namespace prjWinCsCalculator
         Boolean eraseFlag = false;
         Boolean memFlag = false;
         Int16 memCount = 0;
-        String sqrEq = "sqr", sqrtEq = "√", reciEq = "1/";
+        String sqrEq = "sqr", sqrtEq = "\u221A", reciEq = "1/";
         Boolean eqFlag = false;
 
         private void frmStabdard1_Load(object sender, EventArgs e)
         {
+            btnDivide.Text = "\u00f7";
+            btnErase.Text = "\u232B";
+            btnSquare.Text = "x\u00b2";
+            btnSroot.Text = "²\u221Ax";
+            btnReciprocal.Text = "\u00b9/x";
             btnMC.Enabled = btnMR.Enabled = false;
             lblExp.Text = "";
             lblExp.Visible = false;
