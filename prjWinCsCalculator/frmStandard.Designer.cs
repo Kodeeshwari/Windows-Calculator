@@ -465,6 +465,7 @@
             this.button23.Text = "1";
             this.button23.UseMnemonic = false;
             this.button23.UseVisualStyleBackColor = false;
+            this.button23.Click += new System.EventHandler(this.button23_Click);
             // 
             // button24
             // 

@@ -116,24 +116,23 @@
             // 
             // lblExp
             // 
-            this.lblExp.AutoSize = true;
-            this.lblExp.Location = new System.Drawing.Point(375, 0);
+            this.lblExp.Location = new System.Drawing.Point(20, 0);
             this.lblExp.Name = "lblExp";
-            this.lblExp.Size = new System.Drawing.Size(35, 13);
+            this.lblExp.Size = new System.Drawing.Size(390, 13);
             this.lblExp.TabIndex = 3;
             this.lblExp.Text = "label3";
-            this.lblExp.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblExp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblResult
             // 
             this.lblResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
             this.lblResult.Font = new System.Drawing.Font("Segoe UI Semibold", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblResult.Location = new System.Drawing.Point(0, 0);
+            this.lblResult.Location = new System.Drawing.Point(0, 25);
             this.lblResult.Name = "lblResult";
-            this.lblResult.Size = new System.Drawing.Size(420, 70);
+            this.lblResult.Size = new System.Drawing.Size(420, 48);
             this.lblResult.TabIndex = 2;
             this.lblResult.Text = "0";
-            this.lblResult.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.lblResult.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tableLayoutPanel2
             // 
@@ -328,6 +327,7 @@
             this.btnPer.Text = "%";
             this.btnPer.UseMnemonic = false;
             this.btnPer.UseVisualStyleBackColor = false;
+            this.btnPer.Click += new System.EventHandler(this.btnPer_Click);
             // 
             // btnCE
             // 
@@ -732,7 +732,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
