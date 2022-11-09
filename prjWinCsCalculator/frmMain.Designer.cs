@@ -110,6 +110,7 @@
             this.versionScientificToolStripMenuItem1.Name = "versionScientificToolStripMenuItem1";
             this.versionScientificToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.versionScientificToolStripMenuItem1.Text = "Version Scientific";
+            this.versionScientificToolStripMenuItem1.Click += new System.EventHandler(this.versionScientificToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem1
             // 
@@ -161,7 +162,7 @@
             this.toolbarToolStripMenuItem.CheckOnClick = true;
             this.toolbarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolbarToolStripMenuItem.Name = "toolbarToolStripMenuItem";
-            this.toolbarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.toolbarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.toolbarToolStripMenuItem.Text = "Toolbar";
             this.toolbarToolStripMenuItem.Click += new System.EventHandler(this.toolbarToolStripMenuItem_Click);
             // 
@@ -171,7 +172,7 @@
             this.statusBToolStripMenuItem.CheckOnClick = true;
             this.statusBToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBToolStripMenuItem.Name = "statusBToolStripMenuItem";
-            this.statusBToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.statusBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statusBToolStripMenuItem.Text = "Status Bar";
             this.statusBToolStripMenuItem.Click += new System.EventHandler(this.statusBToolStripMenuItem_Click);
             // 
@@ -187,8 +188,9 @@
             // 
             this.manualUtiliToolStripMenuItem.Image = global::prjWinCsCalculator.Properties.Resources.information;
             this.manualUtiliToolStripMenuItem.Name = "manualUtiliToolStripMenuItem";
-            this.manualUtiliToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.manualUtiliToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.manualUtiliToolStripMenuItem.Text = "Manual Utilisateur";
+            this.manualUtiliToolStripMenuItem.Click += new System.EventHandler(this.manualUtiliToolStripMenuItem_Click);
             // 
             // toolStripBar
             // 

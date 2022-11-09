@@ -12,9 +12,9 @@ using System.Xml.Linq;
 
 namespace prjWinCsCalculator
 {
-    public partial class frmStabdard1 : Form
+    public partial class frmStabdard : Form
     {
-        public frmStabdard1()
+        public frmStabdard()
         {
             InitializeComponent();
         }
@@ -26,6 +26,7 @@ namespace prjWinCsCalculator
         Int16 memCount = 0;
         String sqrEq = "sqr", sqrtEq = "\u221A", reciEq = "1/";
         Boolean eqFlag = false;
+
 
         private void frmStabdard1_Load(object sender, EventArgs e)
         {
@@ -92,6 +93,7 @@ namespace prjWinCsCalculator
             lblExp.Visible = false;
             lblResult.Text = "0";
             inputOne = inputTwo = null;
+            eraseFlag = memFlag = eqFlag = false;
         }
 
         private void btnOne_Click(object sender, EventArgs e)
@@ -103,7 +105,6 @@ namespace prjWinCsCalculator
         {
             eraseFlag = false;
 
-
             if (!btnPlus.Enabled || !btnMinus.Enabled || !btnMul.Enabled || !btnDivide.Enabled)
             {
                 lblResult.Text = btntext;
@@ -112,19 +113,16 @@ namespace prjWinCsCalculator
             {
                 if (memFlag)
                 {
-                    MessageBox.Show("memflag");
+                   
                     if (memCount <= 0)
                     {
                         lblResult.Text = "";
                         memCount++;
-                        MessageBox.Show("memcnt");
-
                     }
                     lblResult.Text = lblResult.Text == "0" && lblResult.Text != null ? btntext : lblResult.Text + btntext;
                 }
                 else
                 {
-                    MessageBox.Show("else");
                     lblResult.Text = lblResult.Text == "0" && lblResult.Text != null ? btntext : lblResult.Text + btntext;
                 }
 
@@ -267,7 +265,7 @@ namespace prjWinCsCalculator
             eraseFlag = true;
             getInput();
             lblResult.Text = Math.Sqrt(operandOne).ToString();
-            displayEquation(sqrtEq); 
+            displayEquation(sqrtEq);
         }
         private void getInput()
         {
@@ -292,7 +290,7 @@ namespace prjWinCsCalculator
             {
                 eqFormat = equExp + "(" + operandOne + ")";
                 eqFlag = true;
-                
+
             }
             else
             {
@@ -300,102 +298,11 @@ namespace prjWinCsCalculator
             }
             lblExp.Text = eqFormat;
         }
-        
 
+        
         private void btnPer_Click(object sender, EventArgs e)
         {
-            opr = btnPer.Text;
-        }
-
-        private void btnErase_Click(object sender, EventArgs e)
-        {
-            if (!eraseFlag)
-            {
-                inputOne = lblResult.Text;
-                MessageBox.Show(inputOne.Length.ToString());
-                lblResult.Text = inputOne.Length <= 1 ? lblResult.Text = "0" : lblResult.Text = inputOne.Remove(inputOne.Length - 1, 1);
-            }
-        }
-
-        private void performCalculation(String op)
-        {
-            eraseFlag = true;
-            switch (temp)
-            {
-                case "+":
-                    operandOne = operandOne + operandTwo;
-                    lblExp.Text = operandOne.ToString() + op;
-                    lblResult.Text = operandOne.ToString();
-                    temp = op;
-                    inputTwo = null;
-                    break;
-
-                case "-":
-
-                    if (Math.Sign(operandOne) == -1)
-                    {
-                        operandOne = (operandOne * -1) + operandTwo;
-                        operandOne = -operandOne;
-                    }
-                    else
-                    {
-                        operandOne = operandOne - operandTwo;
-                    }
-
-                    lblExp.Text = operandOne.ToString() + op;
-                    lblResult.Text = operandOne.ToString();
-                    temp = op;
-                    inputTwo = null;
-
-                    break;
-
-                case "X":
-                    operandOne = operandOne * operandTwo;
-                    lblExp.Text = operandOne.ToString() + op;
-                    lblResult.Text = operandOne.ToString();
-                    temp = op;
-                    inputTwo = null;
-
-                    break;
-
-                case "/":
-
-                    operandOne = operandOne / operandTwo;
-                    lblExp.Text = operandOne.ToString() + op;
-                    lblResult.Text = operandOne.ToString();
-                    temp = op;
-                    inputTwo = null;
-
-                    break;
-
-                default:
-                    MessageBox.Show("opr not valid");
-                    break;
-            }
-        }
-
-        private void btnMinus_Click(object sender, EventArgs e)
-        {
-            opr = btnMinus.Text;
-            displayExpression(btnMinus.Text);
-            btnMinus.Enabled = false;
-            if (!btnPlus.Enabled || !btnMul.Enabled || !btnDivide.Enabled)
-            {
-                btnPlus.Enabled = btnMul.Enabled = btnDivide.Enabled = true;
-            }
-            checkInputs(opr);
-        }
-
-        private void btnDot_Click(object sender, EventArgs e)
-        {
-            displayBtnText(btnDot.Text);
-        }
-
-        Boolean flagV = false;
-        private void btnEqual_Click(object sender, EventArgs e)
-        {
-
-            opr = btnEqual.Text;
+            Double calPercentage;
             //displayExpression(btnEqual.Text);
             if (inputOne == null)
             {
@@ -412,24 +319,156 @@ namespace prjWinCsCalculator
             switch (temp)
             {
                 case "+":
-                    if (!flagV)
-                    {
-                        lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + opr;
-                        operandOne = operandOne + operandTwo;
-                        flagV = false;
-                    }
-                    else
-                    {
-                        operandOne = Convert.ToDouble(lblResult.Text);
-                        lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + opr;
-                        operandOne = operandOne + operandTwo;
-                    }
-
+                    calPercentage = operandOne * operandTwo / 100;
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "%";
+                    operandOne = operandOne + calPercentage;
                     lblResult.Text = operandOne.ToString();
-                    temp = opr;
                     break;
                 case "-":
-                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + opr;
+                    calPercentage = operandOne * operandTwo / 100;
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "%";
+                    operandOne = operandOne - calPercentage;
+                    lblResult.Text = operandOne.ToString();
+                    break;
+                case "X":
+                    calPercentage = operandOne * operandTwo / 100;
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "%";
+                    lblResult.Text = calPercentage.ToString();
+                    break;
+                case "\u00f7":
+                    calPercentage = operandTwo / 100;
+                    lblExp.Text = operandOne.ToString() + temp + calPercentage.ToString() + "%";
+                    lblResult.Text = calPercentage.ToString();
+                    break;
+            }
+        
+
+    }
+
+    private void btnErase_Click(object sender, EventArgs e)
+    {
+        if (!eraseFlag)
+        {
+            inputOne = lblResult.Text;
+           
+            lblResult.Text = inputOne.Length <= 1 ? lblResult.Text = "0" : lblResult.Text = inputOne.Remove(inputOne.Length - 1, 1);
+        }
+    }
+
+    private void performCalculation(String op)
+    {
+        eraseFlag = true;
+        switch (temp)
+        {
+            case "+":
+                operandOne = operandOne + operandTwo;
+                lblExp.Text = operandOne.ToString() + op;
+                lblResult.Text = operandOne.ToString();
+                temp = op;
+                inputTwo = null;
+                break;
+
+            case "-":
+
+                if (Math.Sign(operandOne) == -1)
+                {
+                    operandOne = (operandOne * -1) + operandTwo;
+                    operandOne = -operandOne;
+                }
+                else
+                {
+                    operandOne = operandOne - operandTwo;
+                }
+
+                lblExp.Text = operandOne.ToString() + op;
+                lblResult.Text = operandOne.ToString();
+                temp = op;
+                inputTwo = null;
+
+                break;
+
+            case "X":
+                operandOne = operandOne * operandTwo;
+                lblExp.Text = operandOne.ToString() + op;
+                lblResult.Text = operandOne.ToString();
+                temp = op;
+                inputTwo = null;
+
+                break;
+
+            case "\u00f7":
+
+                operandOne = operandOne / operandTwo;
+                lblExp.Text = operandOne.ToString() + op;
+                lblResult.Text = operandOne.ToString();
+                temp = op;
+                inputTwo = null;
+
+                break;
+
+            default:
+               
+                break;
+        }
+    }
+
+    private void btnMinus_Click(object sender, EventArgs e)
+    {
+        opr = btnMinus.Text;
+        displayExpression(btnMinus.Text);
+        btnMinus.Enabled = false;
+        if (!btnPlus.Enabled || !btnMul.Enabled || !btnDivide.Enabled)
+        {
+            btnPlus.Enabled = btnMul.Enabled = btnDivide.Enabled = true;
+        }
+        checkInputs(opr);
+    }
+
+    private void btnDot_Click(object sender, EventArgs e)
+    {
+        displayBtnText(btnDot.Text);
+    }
+
+    Boolean flagV = false;
+    private void btnEqual_Click(object sender, EventArgs e)
+    {
+
+        //displayExpression(btnEqual.Text);
+        if (inputOne == null)
+        {
+            inputOne = lblResult.Text;
+            operandOne = Convert.ToDouble(inputOne);
+            temp = opr;
+        }
+        else if (inputTwo == null)
+        {
+            inputTwo = lblResult.Text;
+            operandTwo = Convert.ToDouble(inputTwo);
+        }
+
+        switch (temp)
+        {
+            case "+":
+                if (!flagV)
+                {
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
+                    operandOne = operandOne + operandTwo;
+                    flagV = false;
+                }
+                else
+                {
+                    operandOne = Convert.ToDouble(lblResult.Text);
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
+                    operandOne = operandOne + operandTwo;
+                }
+
+                lblResult.Text = operandOne.ToString();
+                temp = "+";
+                break;
+            case "-":
+                if (!flagV)
+                {
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
                     if (Math.Sign(operandOne) == -1)
                     {
                         operandOne = (operandOne * -1) + operandTwo;
@@ -439,12 +478,63 @@ namespace prjWinCsCalculator
                     {
                         operandOne = operandOne - operandTwo;
                     }
+                    flagV = false;
+                }
+                else
+                {
+                    operandOne = Convert.ToDouble(lblResult.Text);
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
+                    if (Math.Sign(operandOne) == -1)
+                    {
+                        operandOne = (operandOne * -1) + operandTwo;
+                        operandOne = -operandOne;
+                    }
+                    else
+                    {
+                        operandOne = operandOne - operandTwo;
+                    }
+                }
 
-                    lblResult.Text = operandOne.ToString();
-                    temp = opr;
-                    inputTwo = null;
-                    break;
-            }
+                lblResult.Text = operandOne.ToString();
+                temp = "-";
+                break;
+
+            case "X":
+                if (!flagV)
+                {
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
+                    operandOne = operandOne * operandTwo;
+                    flagV = false;
+                }
+                else
+                {
+                    operandOne = Convert.ToDouble(lblResult.Text);
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
+                    operandOne = operandOne * operandTwo;
+                }
+
+                lblResult.Text = operandOne.ToString();
+                temp = "X";
+                break;
+
+            case "\u00f7":
+
+                if (!flagV)
+                {
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
+                    operandOne = operandOne / operandTwo;
+                    flagV = false;
+                }
+                else
+                {
+                    operandOne = Convert.ToDouble(lblResult.Text);
+                    lblExp.Text = operandOne.ToString() + temp + operandTwo.ToString() + "=";
+                    operandOne = operandOne / operandTwo;
+                }
+                lblResult.Text = operandOne.ToString();
+                temp = "/";
+                break;
         }
     }
+}
 }

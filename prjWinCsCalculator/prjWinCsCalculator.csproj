@@ -52,19 +52,28 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmStabdard1.cs">
+    <Compile Include="frmScientific.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStabdard1.Designer.cs">
-      <DependentUpon>frmStabdard1.cs</DependentUpon>
+    <Compile Include="frmScientific.Designer.cs">
+      <DependentUpon>frmScientific.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmStabdard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmStabdard.Designer.cs">
+      <DependentUpon>frmStabdard.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStabdard1.resx">
-      <DependentUpon>frmStabdard1.cs</DependentUpon>
+    <EmbeddedResource Include="frmScientific.resx">
+      <DependentUpon>frmScientific.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmStabdard.resx">
+      <DependentUpon>frmStabdard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

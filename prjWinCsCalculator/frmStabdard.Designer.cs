@@ -1,6 +1,6 @@
 ﻿namespace prjWinCsCalculator
 {
-    partial class frmStabdard1
+    partial class frmStabdard
     {
         /// <summary>
         /// Required designer variable.
@@ -92,7 +92,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(427, 464);
+            this.splitContainer1.Size = new System.Drawing.Size(428, 464);
             this.splitContainer1.SplitterDistance = 154;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -715,16 +715,16 @@
             this.btnSix.UseVisualStyleBackColor = false;
             this.btnSix.Click += new System.EventHandler(this.btnSix_Click);
             // 
-            // frmStabdard1
+            // frmStabdard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(243)))), ((int)(((byte)(243)))));
-            this.ClientSize = new System.Drawing.Size(427, 464);
+            this.ClientSize = new System.Drawing.Size(428, 464);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "frmStabdard1";
-            this.Text = "frmtable";
+            this.Name = "frmStabdard";
+            this.Text = "Calculator";
             this.Load += new System.EventHandler(this.frmStabdard1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
